@@ -6,10 +6,34 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Curso Basico de Vue.js | Platzi</title>
 	<link rel="stylesheet" href="./css/index.css">
+	<link rel="shortcut icon" href="./assets/icons/btc-logo.png" type="image/x-icon">
 </head>
 <body>
-	<main>
-		<span id="app">{{test}}</span>
+	<main id="app">
+		<img class="logo-btc" v-bind:src="img" v-bind:alt="name">
+		<p>{{name}}</p>
+
+		<ul>
+			<li v-for="(p, i) in prices" :key="prices"></li>
+		</ul>
+
+		<!--
+
+			[v-if, v-else-if y v-else] Ocultan el elemento completamente del dom (No se renderiza). [Usar cuando es un elemento fijo que no varia mucho]
+
+		-->
+		<!--<span v-if="ChangePercent < 0">👎</span>
+		<span v-else-if="ChangePercent > 0">👍</span>
+		<span v-else>🤞</span>-->
+
+		<!--
+
+			[v-show] Ocultan el elemento con [display none] (Usando CSS), entonces si lo renderiza. [Usar cuando es un elemento que varia mucho y va a cambiar en un futuro]
+
+		-->
+		<!--<span v-show="ChangePercent < 0">👎</span>
+		<span v-show="ChangePercent > 0">👍</span>
+		<span v-show="ChangePercent === 0">🤞</span>-->
 	</main>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="./js/app.js"></script>
